@@ -21,11 +21,15 @@ export default function PostPreview({
           {title}
         </Link>
       </h3>
-      <div className="text-lg mb-4">
-        <DateComponent dateString={date} />
+      <div className="text-lg mb-4 flex flex-col">
+        <div className='ml-auto mt-5'>
+          {author && <Avatar name={author.name} picture={author.picture} />}
+          <div className='flex flex-col'>
+            <p className='text-[20px] ml-auto mr-6'><DateComponent dateString={date} /></p>
+          </div>
+        </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      {author && <Avatar name={author.name} picture={author.picture} />}
+      
     </div>
   )
 }
